@@ -20,7 +20,7 @@ export default async function Home() {
     <div className={styles.page}>
       {billions.map((billion: any) => {
         return (
-          <li>
+          <li key={billion.id}>
             <Link href={`/person/${billion.id}`}>{billion.name}111</Link>
           </li>
         );
