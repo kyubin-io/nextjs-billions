@@ -14,12 +14,20 @@ async function getBillions() {
   return json;
 }
 
+type Billion = {
+  id: string;
+  name: string;
+  squareImage: string;
+  netWorth: number;
+  industries: string[];
+};
+
 export default async function Home() {
   const billions = await getBillions();
   console.log(billions);
   return (
     <div className={styles.page}>
-      {billions.map((billion: any) => {
+      {billions.map((billion: Billion) => {
         return (
           <li key={billion.id}>
             <Link href={`/person/${billion.id}`}>
