@@ -6,7 +6,7 @@ export const metadata = {
   title: "Home",
 };
 
-export const API_URL = "https://billions-api.nomadcoders.workers.dev/";
+const API_URL = "https://billions-api.nomadcoders.workers.dev/";
 
 async function getBillions() {
   const response = await fetch(API_URL);
