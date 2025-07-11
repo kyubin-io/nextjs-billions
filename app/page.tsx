@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./page.module.css";
 import Link from "next/link";
 
@@ -21,7 +22,18 @@ export default async function Home() {
       {billions.map((billion: any) => {
         return (
           <li key={billion.id}>
-            <Link href={`/person/${billion.id}`}>{billion.name}111</Link>
+            <Link href={`/person/${billion.id}`}>
+              {/* <Image
+                src={billion.squareImage}
+                width={300}
+                height={300}
+                alt={billion.name}
+              /> */}
+              <div>{billion.name}</div>
+              <span>
+                {billion.netWorth} / {billion.industries}
+              </span>
+            </Link>
           </li>
         );
       })}
